@@ -1,0 +1,11 @@
+# create volume 
+aws ec2 create-volume \
+    --availability-zone eu-north-1 \
+    --volume-type io2
+    --size 12
+    --iops 6000
+# attach to instance
+aws ec2 attach-volume \
+    --volume-id vol-0d5ede40187f14311 \
+    --instance-id i-0ecd658fa706cbc65 \
+    --device /dev/sdf
